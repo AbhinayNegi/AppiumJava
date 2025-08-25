@@ -11,3 +11,6 @@ if the above does not work and throws error like io.appium.java_client.NoSuchCon
 options.setCapability("appium:chromedriverExecutable", "C:\\Users\\negia\\AppData\\Roaming\\npm\\node_modules\\appium-chromedriver\\chromedriver\\win\\chromedriver.exe");
 options.setCapability("appium:ensureWebviewsHavePages", true);
 options.setCapability("appium:nativeWebScreenshot", true);
+
+or
+options.setCapability("appium:chromedriverExecutableDir", "C:\\Users\\negia\\AppData\\Roaming\\npm\\node_modules\\appium-chromedriver\\chromedriver\\win"); // if you want appium to use appropiate driver form the directory
