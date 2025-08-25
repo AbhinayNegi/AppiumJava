@@ -1,11 +1,13 @@
 package tests;
 
 import io.appium.java_client.AppiumBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Set;
 
 public class CommonMobileActionsTest extends BaseTest{
 
@@ -75,4 +77,16 @@ public class CommonMobileActionsTest extends BaseTest{
         WebElement destElement = driver.findElement(AppiumBy.id("io.appium.android.apis:id/drag_dot_2"));
         dragNDropGesture(srcElement, destElement);
     }
+
+    @Test
+    public void switchToWebView() {
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='Views']")).click();
+        scrollToTheElementByText("WebView2").click();
+        driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Views/WebView2\")")).isDisplayed();
+        Set<String> contexts = driver.getContextHandles(); //WEBVIEW_io.appium.android.apis
+        System.out.println(contexts);
+        driver.context("WEBVIEW_io.appium.android.apis");
+        driver.findElement(By.id("i am a link")).click();
+    }
+
 }

@@ -41,7 +41,9 @@ public class BaseTest {
                 .setAppActivity(".ApiDemos")        // adjust to your app’s launch activity or a particular screen of the app
                 .setAutoGrantPermissions(true) // automatically grant all permission
                 .setNewCommandTimeout(Duration.ofSeconds(3600)); // how long to keep connection active if tests does not send command
-
+        options.setCapability("appium:chromedriverExecutableDir", "C:\\Users\\negia\\AppData\\Roaming\\npm\\node_modules\\appium-chromedriver\\chromedriver\\win");
+        options.setCapability("appium:ensureWebviewsHavePages", true);
+        options.setCapability("appium:nativeWebScreenshot", true);
         driver = new AndroidDriver(
                 URI.create("http://127.0.0.1:4723/").toURL(),
                 options
@@ -101,7 +103,18 @@ public class BaseTest {
     }
 
     public void dragNDropGesture(WebElement src, WebElement dest){
-            
+        Sequence dragDrop = new Sequence(finger, 1);
+        int startX = src.getRect().getX() + (int)(src.getSize().getWidth() / 2);
+        int startY = src.getRect().getY() + (int)(src.getSize().getHeight() / 2);
+        int endX = dest.getRect().getX() + (int)(dest.getSize().getWidth() / 2);
+        int endY = dest.getRect().getY() + (int)(dest.getSize().getHeight() / 2);
+
+        dragDrop.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+        dragDrop.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        dragDrop.addAction(new Pause(finger, Duration.ofSeconds(3)));
+        dragDrop.addAction(finger.createPointerMove(Duration.ofSeconds(1), PointerInput.Origin.viewport(), endX, endY));
+        dragDrop.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        driver.perform(Collections.singletonList(dragDrop));
     }
 
     @AfterClass(alwaysRun = true)
