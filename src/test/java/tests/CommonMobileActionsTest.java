@@ -20,8 +20,6 @@ public class CommonMobileActionsTest extends BaseTest{
 
     @Test
     public void startApp() throws InterruptedException {
-//        driver.findElement(AppiumBy.accessibilityId("Accessibility")).click();
-//        driver.findElement(AppiumBy.id("android:id/text1")).click();
         driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='Accessibility']")).click();
     }
 
