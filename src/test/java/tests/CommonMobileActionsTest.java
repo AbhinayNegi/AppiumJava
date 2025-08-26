@@ -7,14 +7,13 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class CommonMobileActionsTest extends BaseTest{
@@ -161,5 +160,18 @@ public class CommonMobileActionsTest extends BaseTest{
         driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
     }
 
+    @Test
+    public void fluentWait() {
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='Views']")).click();
+        driver.findElement(AppiumBy.accessibilityId("Controls")).click();
+        driver.findElement(AppiumBy.accessibilityId("1. Light Theme")).click();
+        By toggleBtn = AppiumBy.id("io.appium.android.apis:id/toggle1");
+        driver.findElement(toggleBtn).click();
 
+        Wait<AndroidDriver> fluent = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(10))
+                .ignoring(NoSuchElementException.class);
+        fluent.until(d -> d.findElement(toggleBtn).getText().equalsIgnoreCase("on"));
+    }
 }
