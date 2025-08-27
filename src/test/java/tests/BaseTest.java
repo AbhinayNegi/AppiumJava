@@ -19,7 +19,7 @@ public class BaseTest {
 
     PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     @Parameters({"deviceName", "udid", "systemPort", "chromeDriverPort", "app", "appPackage", "appActivity"})
     public void setUp(@Optional("emulator-5554") String deviceName,
                       @Optional("emulator-5554") String udid,

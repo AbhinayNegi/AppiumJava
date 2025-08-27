@@ -5,9 +5,9 @@ import pages.BasePage;
 import pages.HomePage;
 import pages.ViewsPages;
 
-public class VerifyDragAndDropTest extends BaseTest{
+public class VerifyDragAndDropTest extends BaseTest {
 
-    @Test
+    @Test(groups = "smoke")
     public void dragNDrop() {
         HomePage home = new HomePage(driver);
         home.openViews();

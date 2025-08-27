@@ -8,7 +8,7 @@ import pages.generalStoreApp.StoreHomePage;
 
 public class LoginUserTest extends BaseTest {
 
-    @Test(dataProvider = "loginUsernames")
+    @Test(dataProvider = "loginUsernames", groups = {"smoke"})
     public void loginUserTest(String username) {
         StoreHomePage homePage = new StoreHomePage(driver);
         ProductPage productPage = new ProductPage(driver);
