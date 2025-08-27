@@ -16,6 +16,6 @@ public class WebView2Page extends BasePage{
         switchToFirstWebView();
         wait.until(ExpectedConditions.visibilityOfElementLocated(LINK)).click();
         switchToNative();
-        back();
+        goBack();
     }
 }

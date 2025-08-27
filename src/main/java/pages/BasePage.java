@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
 
@@ -37,7 +36,9 @@ public class BasePage {
     }
 
     protected void typeText(By locator, String txt){
-        getElement(locator).sendKeys(txt);
+        WebElement txtField = getElement(locator);
+        txtField.clear();
+        txtField.sendKeys(txt);
     }
 
     protected String getTextOfTheElement(By locator){
@@ -123,7 +124,7 @@ public class BasePage {
         driver.context("NATIVE_APP");
     }
 
-    protected void back() {
+    public void goBack() {
         driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
     }
 

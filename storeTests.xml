@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Store tests" parallel="false" thread-count="2">
+    <test name="Check Web View">
+        <parameter name="deviceName" value="any"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="systemPort" value="8201"/>
+        <parameter name="chromedriverPort" value="9515"/>
+        <parameter name="app" value="C:\Work\Appium automation\src\main\resources\apk\General-Store.apk"/>
+<!--        <parameter name="appPackage" value="io.appium.android.apis"/>-->
+<!--        <parameter name="appActivity" value=".ApiDemos"/>-->
+        <classes>
+            <class name="tests.LoginUserTest"/>
+        </classes>
+    </test>
+
+</suite>

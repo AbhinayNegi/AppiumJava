@@ -5,6 +5,9 @@
         <parameter name="udid" value="emulator-5554"/>
         <parameter name="systemPort" value="8201"/>
         <parameter name="chromedriverPort" value="9515"/>
+        <parameter name="app" value="C:\Work\Appium automation\src\main\resources\apk\ApiDemos-debug.apk"/>
+        <parameter name="appPackage" value="io.appium.android.apis"/>
+        <parameter name="appActivity" value=".ApiDemos"/>
         <classes>
             <class name="tests.CheckWebViewTest"/>
         </classes>
@@ -15,6 +18,9 @@
         <parameter name="udid" value="emulator-5556"/>
         <parameter name="systemPort" value="8202"/>
         <parameter name="chromedriverPort" value="9516"/>
+        <parameter name="app" value="C:\Work\Appium automation\src\main\resources\apk\ApiDemos-debug.apk"/>
+        <parameter name="appPackage" value="io.appium.android.apis"/>
+        <parameter name="appActivity" value=".ApiDemos"/>
         <classes>
             <class name="tests.VerifyDragAndDropTest"/>
         </classes>
