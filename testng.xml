@@ -1,8 +1,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="AppiumSuite" parallel="false">
-    <test name="AndroidTests">
+<suite name="AppiumSuite" parallel="tests" thread-count="2">
+    <test name="Check Web View">
+        <parameter name="deviceName" value="any"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="systemPort" value="8201"/>
+        <parameter name="chromedriverPort" value="9515"/>
         <classes>
-            <class name="tests.CommonMobileActionsTest"/>
+            <class name="tests.CheckWebViewTest"/>
+        </classes>
+    </test>
+
+    <test name="Drag and drop test">
+        <parameter name="deviceName" value="any"/>
+        <parameter name="udid" value="emulator-5556"/>
+        <parameter name="systemPort" value="8202"/>
+        <parameter name="chromedriverPort" value="9516"/>
+        <classes>
+            <class name="tests.VerifyDragAndDropTest"/>
         </classes>
     </test>
 </suite>
