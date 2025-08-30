@@ -8,6 +8,12 @@
         <parameter name="app" value="C:\Work\Appium automation\src\main\resources\apk\ApiDemos-debug.apk"/>
         <parameter name="appPackage" value="io.appium.android.apis"/>
         <parameter name="appActivity" value=".ApiDemos"/>
+
+        <!-- BrowserStack params -->
+        <parameter name="bsDevice" value="Google Pixel 7"/>
+        <parameter name="bsOsVersion" value="13.0"/>
+        <parameter name="bsApp" value="bs://c03b0d8cfffae452890cbd3abad84ca02fd2eca1"/>
+
         <classes>
             <class name="tests.CheckWebViewTest"/>
         </classes>
@@ -21,6 +27,12 @@
         <parameter name="app" value="C:\Work\Appium automation\src\main\resources\apk\ApiDemos-debug.apk"/>
         <parameter name="appPackage" value="io.appium.android.apis"/>
         <parameter name="appActivity" value=".ApiDemos"/>
+
+        <!-- BrowserStack params -->
+        <parameter name="bsDevice" value="Samsung Galaxy S22"/>
+        <parameter name="bsOsVersion" value="12.0"/>
+        <parameter name="bsApp" value="bs://c03b0d8cfffae452890cbd3abad84ca02fd2eca1"/>
+
         <classes>
             <class name="tests.VerifyDragAndDropTest"/>
         </classes>
