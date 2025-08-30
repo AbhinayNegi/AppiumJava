@@ -2,3 +2,4 @@
 /target
 *.class
 /target/test-classes/
+/logs/browserstack-plugin.log

@@ -8,6 +8,12 @@
         <parameter name="app" value="C:\Work\Appium automation\src\main\resources\apk\General-Store.apk"/>
 <!--        <parameter name="appPackage" value="io.appium.android.apis"/>-->
 <!--        <parameter name="appActivity" value=".ApiDemos"/>-->
+
+        <!-- BS params (only used when -DrunEnv=bs) -->
+        <parameter name="bsDevice" value="Google Pixel 7"/>
+        <parameter name="bsOsVersion" value="13.0"/>
+        <parameter name="bsApp" value="bs://390aeaa3d166277323ef6225d40fa257b328bba0"/>
+
         <classes>
             <class name="tests.LoginUserTest"/>
         </classes>

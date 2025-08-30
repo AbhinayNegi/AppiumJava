@@ -125,7 +125,7 @@ public class BasePage {
     }
 
     public void goBack() {
-        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+        driver.pressKey(new KeyEvent(AndroidKey.BACK));
     }
 
     protected void waitForToast() {
